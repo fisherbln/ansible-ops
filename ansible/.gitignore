@@ -1,2 +1,6 @@
 collections/
 roles/external/
+
+
+# Sops
+.decrypted~*
