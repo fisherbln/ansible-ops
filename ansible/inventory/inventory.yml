@@ -1,18 +1,18 @@
 ---
 all:
   children:
-    bsd:
-      children:
-        truenas:
-        jails:
-    centos:
-      vars:
-        ansible_user: admin
-      children:
-        container_hosts:
-    fedora:
-      vars:
-        ansible_user: fedora
+    #bsd:
+    #  children:
+    #    truenas:
+    #    jails:
+    #centos:
+    #  vars:
+    #    ansible_user: admin
+    #  children:
+    #    container_hosts:
+    #fedora:
+    #  vars:
+    #    ansible_user: fedora
     debian:
       vars:
         ansible_user: debian
@@ -59,34 +59,25 @@ all:
         proxmox:
     proxmox:
       hosts:
-        peirce.mgmt.socozy.casa:
+        pve1.nickeson.net:
           ip_address_mgmt: 10.9.8.18
           ip_address_data: 10.9.10.18
-          ip_address_prim: 10.9.4.16
-          proxmox_10gbe_iface: enp6s0
+          ip_address_prim: 10.28.1.51
+          proxmox_10gbe_iface: enp1s0
           proxmox_1gbe_iface: eno1
-        ibnsina.mgmt.socozy.casa:
+        pve2.nickeson.net:
           ip_address_mgmt: 10.9.8.16
           ip_address_data: 10.9.10.16
-          ip_address_prim: 10.9.4.17
-          proxmox_10gbe_iface: enp6s0
+          ip_address_prim: 10.28.1.52
+          proxmox_10gbe_iface: enp1s0
           proxmox_1gbe_iface: eno1
-        mill.mgmt.socozy.casa:
+        pve3.nickeson.net:
           ip_address_mgmt: 10.9.8.13
           ip_address_data: 10.9.10.13
-          ip_address_prim: 10.9.4.18
-          proxmox_10gbe_iface: enp6s0
+          ip_address_prim: 10.28.1.53
+          #proxmox_10gbe_iface: enp6s0
+          proxmox_10gbe_iface: enp1s0
           proxmox_1gbe_iface: eno1
-        witt.mgmt.socozy.casa:
-          ip_address_mgmt: 10.9.8.11
-          ip_address_data: 10.9.10.11
-          proxmox_10gbe_iface: enp6s0
-          proxmox_1gbe_iface: eno1
-        debord.mgmt.socozy.casa:
-          ip_address_mgmt: 10.9.8.21
-          ip_address_data: 10.9.10.21
-          proxmox_10gbe_iface: enp4s0
-          proxmox_1gbe_iface: enp100s0
     k8s:
       hosts:
         cluster-test.mgmt.socozy.casa:
@@ -153,6 +144,6 @@ all:
         ansible_user: vyos
         ansible_python_interpreter: /usr/bin/python3
       hosts:
-        router0.int.socozy.casa:
-          ansible_host: 192.168.1.1
+        vyos.nickeson.net:
+          ansible_host: 10.28.1.1
 ...
