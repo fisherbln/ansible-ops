@@ -1,6 +1,6 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
-dns_local_dhcp_resolver: 192.168.1.1
+dns_local_dhcp_resolver: 10.28.1.1
 coredns_config_dir: "{{ playbook_dir }}/../dns"
 coredns_zone1_sops: db.socozy.casa.sops
 coredns_zone1_name: db.socozy.casa
